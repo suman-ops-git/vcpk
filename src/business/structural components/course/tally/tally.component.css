@@ -1,0 +1,158 @@
+.tally-course-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fffde7 0%, #e3f2fd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.tally-course-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.7s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tally-course-title {
+  text-align: center;
+  color: #f9a825;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.tally-course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.tally-course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: #fffde7;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  font-size: 1.08rem;
+  color: #333;
+  box-shadow: 0 1px 4px rgba(249,168,37,0.04);
+}
+
+.tally-course-info i {
+  color: #f9a825;
+  margin-right: 8px;
+}
+
+.tally-course-section {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(249,168,37,0.03);
+}
+
+.tally-course-section h4 {
+  color: #f9a825;
+  margin-bottom: 0.5rem;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tally-course-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.tally-course-section li {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.tally-course-section.testimonials {
+  background: #fffde7;
+  border-left: 4px solid #f9a825;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+}
+
+.tally-course-section.testimonials blockquote {
+  margin: 0 0 0.7rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #f9a825;
+  font-style: italic;
+  color: #444;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.tally-course-section.testimonials footer {
+  font-size: 0.95rem;
+  color: #f9a825;
+  margin-top: 0.2rem;
+  margin-left: 1.2rem;
+}
+
+.tally-course-enroll {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 1.13rem;
+  color: #f9a825;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.enroll-btn {
+  display: inline-block;
+  margin-left: 0.5rem;
+  background: linear-gradient(90deg, #f9a825 0%, #ffd54f 100%);
+  color: #fff !important;
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(249,168,37,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(90deg, #ffd54f 0%, #f9a825 100%);
+  box-shadow: 0 4px 16px rgba(249,168,37,0.18);
+  color: #1976d2 !important;
+}
+
+@media (max-width: 600px) {
+  .tally-course-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .tally-course-title {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,102 @@
+.carousel {
+  border-radius: 0; /* No corner curve */
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(31,38,135,0.15);
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .carousel img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel img {
+    height: 140px;
+  }
+}
+
+.key-points {
+  background: #f3f6fb;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 12px rgba(31,38,135,0.07);
+}
+
+.key-points ul {
+  margin: 0;
+}
+
+.key-points li {
+  margin-bottom: 0.7rem;
+  color: #333;
+}
+
+.basic-course {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(31,38,135,0.07);
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+}
+.basic-course ul {
+  margin: 0 0 1rem 0;
+}
+.basic-course li {
+  margin-bottom: 0.5rem;
+}
+
+.home-welcome {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.home-welcome-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(31,38,135,0.10);
+  padding: 2rem 2.5rem;
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInDown 0.7s cubic-bezier(.39,.575,.565,1) both;
+}
+
+.home-welcome-card h2 {
+  color: #2575fc;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.home-welcome-card p {
+  color: #444;
+  font-size: 1.15rem;
+  margin: 0.5rem 0 0 0;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

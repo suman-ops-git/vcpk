@@ -1,7 +1,12 @@
 <div class="login-bg">
   <div class="login-container">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-card">
+      <div class="login-logo">
+        <i class="fa-solid fa-user-graduate"></i>
+      </div>
       <h2 class="login-title">Sign In</h2>
+      <div class="login-subtitle">Welcome back! Please login to your account.</div>
+      <div class="login-divider"></div>
       <div class="input-group">
         <span class="input-icon">
           <i class="fa-solid fa-envelope"></i>
@@ -13,6 +18,9 @@
           <i class="fa-solid fa-lock"></i>
         </span>
         <input formControlName="password" placeholder="Password" type="password" />
+      </div>
+      <div class="login-actions">
+        <a href="#" class="forgot-link">Forgot password?</a>
       </div>
       <button type="submit" class="login-btn">Sign In</button>
       <div class="login-footer">

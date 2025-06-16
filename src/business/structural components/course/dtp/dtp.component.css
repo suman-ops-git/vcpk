@@ -1,0 +1,158 @@
+.dtp-course-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f6fb 0%, #e0e7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.dtp-course-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.7s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dtp-course-title {
+  text-align: center;
+  color: #6a11cb;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dtp-course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.dtp-course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: #f3f6fb;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  font-size: 1.08rem;
+  color: #333;
+  box-shadow: 0 1px 4px rgba(106,17,203,0.04);
+}
+
+.dtp-course-info i {
+  color: #6a11cb;
+  margin-right: 8px;
+}
+
+.dtp-course-section {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(106,17,203,0.03);
+}
+
+.dtp-course-section h4 {
+  color: #6a11cb;
+  margin-bottom: 0.5rem;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dtp-course-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.dtp-course-section li {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.dtp-course-section.testimonials {
+  background: #e0e7ff;
+  border-left: 4px solid #6a11cb;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+}
+
+.dtp-course-section.testimonials blockquote {
+  margin: 0 0 0.7rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #2575fc;
+  font-style: italic;
+  color: #444;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.dtp-course-section.testimonials footer {
+  font-size: 0.95rem;
+  color: #6a11cb;
+  margin-top: 0.2rem;
+  margin-left: 1.2rem;
+}
+
+.dtp-course-enroll {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 1.13rem;
+  color: #6a11cb;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.enroll-btn {
+  display: inline-block;
+  margin-left: 0.5rem;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff !important;
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(106,17,203,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+  box-shadow: 0 4px 16px rgba(106,17,203,0.18);
+  color: #ffe082 !important;
+}
+
+@media (max-width: 600px) {
+  .dtp-course-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .dtp-course-title {
+    font-size: 1.2rem;
+  }
+}
