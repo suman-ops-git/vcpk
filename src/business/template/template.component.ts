@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ObservableService } from '../../services/observable.service';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-template',
@@ -10,8 +10,7 @@ export class TemplateComponent implements OnInit {
 
   constructor() { }
 
-  isAuthenticate: boolean = false;
-
   ngOnInit(): void {
   }
+
 }
