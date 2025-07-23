@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private authservice: AuthService, private router: Router) {
+  constructor(private fb: UntypedFormBuilder, private authservice: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
       email: [''],
       password: ['']
