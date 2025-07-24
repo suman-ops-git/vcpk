@@ -1,27 +1,27 @@
 <nav class="header-nav">
-  <div class="header-logo">
-    <i class="fa-solid fa-cubes"></i> VCPK
-  </div>
-  @if (isAuthenticate) {
-    <ul class="header-menu">
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" href="#" id="courseDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Course
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="courseDropdown">
-          <li><a class="dropdown-item" routerLink="/course/basic" routerLinkActive="active">Basic Computer</a>
-        </li>
-        <li><a class="dropdown-item" routerLink="/course/dtp" routerLinkActive="active">DTP</a></li>
-        <li><a class="dropdown-item" routerLink="/course/tally" routerLinkActive="active">Tally</a></li>
-        <li><a class="dropdown-item" routerLink="/course/programming"
-        routerLinkActive="active">Programming</a>
-      </li>
-    </ul>
-  </li>
-  <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-  <li><a routerLink="/login" (click)="logout()" routerLinkActive="active">Logout</a></li>
-</ul>
-}
+    <div class="header-logo">
+        <i class="fa-solid fa-cubes"></i> VCPK
+    </div>
+    <ng-container *ngIf="isAuthenticate">
+        <ul class="header-menu">
+            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" id="courseDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Course
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="courseDropdown">
+                    <li><a class="dropdown-item" routerLink="/course/basic" routerLinkActive="active">Basic Computer</a>
+                    </li>
+                    <li><a class="dropdown-item" routerLink="/course/dtp" routerLinkActive="active">DTP</a></li>
+                    <li><a class="dropdown-item" routerLink="/course/tally" routerLinkActive="active">Tally</a></li>
+                    <li><a class="dropdown-item" routerLink="/course/programming"
+                            routerLinkActive="active">Programming</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            <li><a routerLink="/login" (click)="logout()" routerLinkActive="active">Logout</a></li>
+        </ul>
+    </ng-container>
 </nav>
