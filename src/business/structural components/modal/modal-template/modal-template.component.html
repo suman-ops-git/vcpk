@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Modal Title: {{ setting?.header }}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+  </button>
+</div>
+
+<div class="modal-body">
+  <p>Data received: <strong>{{ setting?.customMessage }}</strong></p>
+  <hr>
+  <ng-container #innerComponentHost></ng-container>
+  <hr>
+  <button class="btn btn-warning" (click)="emitCustomEvent()">Emit Custom Event</button>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="closeModal('cancel')">Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="closeModal('confirm')">Confirm</button>
+</div>
