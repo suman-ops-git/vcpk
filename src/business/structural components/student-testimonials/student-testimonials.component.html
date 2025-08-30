@@ -1,0 +1,28 @@
+<section class="testimonials">
+  <h2 class="section-title">🌟 What Our Students Say</h2>
+
+  <div class="testimonial-carousel">
+    <div 
+      class="testimonial-card" 
+      *ngFor="let t of testimonials; let i = index"
+      [style.transform]="'translateX(-' + (currentIndex * (100 / visibleCards)) + '%)'"
+    >
+      <div class="student-img">
+        <img [src]="t.image" alt="Student photo">
+      </div>
+      <p class="testimonial-text">“{{ t.feedback }}”</p>
+      <h4 class="student-name">{{ t.name }}</h4>
+      <span class="student-course">{{ t.course }}</span>
+    </div>
+  </div>
+
+  <!-- Dots indicators -->
+  <div class="carousel-dots">
+    <span 
+      class="dot" 
+      *ngFor="let d of getDots(); let i = index" 
+      [class.active]="i === getActiveDotIndex()"
+      (click)="goToSlide(i)">
+    </span>
+  </div>
+</section>

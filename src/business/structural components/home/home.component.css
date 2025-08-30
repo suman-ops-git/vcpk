@@ -1,5 +1,5 @@
-.carousel {
-  border-radius: 0; /* No corner curve */
+/* .carousel {
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(31,38,135,0.15);
   margin-bottom: 2rem;
@@ -23,7 +23,18 @@
     height: 140px;
   }
 }
-
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background: url('../../../assets/banner/background/jnnyc-bg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 40px 20px;
+}
 .key-points {
   background: #f3f6fb;
   border-radius: 12px;
@@ -99,4 +110,66 @@
     opacity: 1;
     transform: none;
   }
+} */
+
+
+.key-points {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #f8fbff, #eef5ff);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1e3a8a;
+  position: relative;
+}
+
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.point-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.point-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.point-card i {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+/* 🎨 Colorful icons */
+.point-card:nth-child(1) i { color: #e63946; } /* Red */
+.point-card:nth-child(2) i { color: #1d4ed8; } /* Blue */
+.point-card:nth-child(3) i { color: #f59e0b; } /* Amber */
+.point-card:nth-child(4) i { color: #10b981; } /* Green */
+.point-card:nth-child(5) i { color: #8b5cf6; } /* Purple */
+.point-card:nth-child(6) i { color: #ec4899; } /* Pink */
+
+.point-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.point-card p {
+  font-size: 0.95rem;
+  color: #374151;
 }

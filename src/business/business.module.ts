@@ -13,6 +13,9 @@ import { ProgramingComponent } from './structural components/course/programing/p
 import { DtpComponent } from './structural components/course/dtp/dtp.component';
 import { TallyComponent } from './structural components/course/tally/tally.component';
 import { ContactComponent } from './structural components/contact/contact.component';
+import { HomeBannerComponent } from "./structural components/home-banner/home-banner.component";
+import { GalleryComponent } from './structural components/gallery/gallery.component';
+import { StudentTestimonialsComponent } from './structural components/student-testimonials/student-testimonials.component';
 
 
 
@@ -28,13 +31,16 @@ import { ContactComponent } from './structural components/contact/contact.compon
     ProgramingComponent,
     DtpComponent,
     TallyComponent,
-    ContactComponent
+    ContactComponent,
+    HomeBannerComponent,
+    GalleryComponent,
+    StudentTestimonialsComponent
   ],
   imports: [
     CommonModule,
     BusinessRoutingModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+],
   exports: [
     TemplateComponent
   ]

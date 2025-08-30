@@ -1,0 +1,24 @@
+<section class="gallery-section">
+  <h2 class="gallery-title">✨ Our Gallery ✨</h2>
+  <div class="gallery-grid">
+    <div 
+      class="gallery-item" 
+      *ngFor="let image of galleryImages; let i = index" 
+      (click)="openPopup(i)">
+      <img [src]="image" alt="gallery" />
+      <div class="overlay">
+        <span class="view-text">View 📸</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popup Modal -->
+<div class="popup" *ngIf="popupVisible">
+  <span class="close-btn" (click)="closePopup()">&times;</span>
+  <img [src]="galleryImages[currentIndex]" class="popup-img" />
+  <div class="popup-controls">
+    <button (click)="prevImage()">&#10094;</button>
+    <button (click)="nextImage()">&#10095;</button>
+  </div>
+</div>

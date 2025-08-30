@@ -11,14 +11,19 @@ import { ProgramingComponent } from './structural components/course/programing/p
 import { ContactComponent } from './structural components/contact/contact.component';
 
 const routes: Routes = [
-  {
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full'
+  // },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // },
+   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   },
   {
     path: 'home',

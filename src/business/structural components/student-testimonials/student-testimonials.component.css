@@ -1,0 +1,101 @@
+.testimonials {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f9fbff, #eef3ff);
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #1a237e;
+}
+
+.testimonial-carousel {
+  display: flex;
+  gap: 20px; /* spacing between cards */
+  transition: transform 0.6s ease-in-out;
+  overflow: hidden;
+  justify-content: center; /* keeps them aligned in center */
+}
+
+.testimonial-card {
+  flex: 0 0 calc(100% / 3 - 20px); /* 3 cards at a time, minus gap */
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.student-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #4a90e2;
+  box-shadow: 0 0 12px rgba(74, 144, 226, 0.6);
+}
+
+.student-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.student-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.student-course {
+  font-size: 14px;
+  color: #777;
+}
+
+.carousel-dots {
+  margin-top: 25px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #4a90e2;
+}
+
+/* ✅ Responsive */
+@media (max-width: 992px) {
+  .testimonial-card {
+    flex: 0 0 calc(100% / 2 - 20px); /* show 2 cards */
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 100%; /* show 1 card */
+  }
+}
+
