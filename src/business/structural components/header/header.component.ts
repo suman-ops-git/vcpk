@@ -8,20 +8,20 @@ import { ObservableService } from '../../../services/observable.service';
   styleUrls: ['./header.component.css'],
   standalone: false
 })
-export class HeaderComponent implements OnInit {
-  public isAuthenticate: boolean = true;
-  public isMenuOpen: boolean = false;
+export class HeaderComponent {
+  menuOpen = false;
+  courseOpen = false;
 
-  constructor(private authService: AuthService, private observableService: ObservableService) { }
-
-  ngOnInit(): void {
-    // this.observableService.loginValue.subscribe(value => {
-    //   this.isAuthenticate = value;
-    //   console.log('Login value:', value);
-    // });
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    // Close the course dropdown if the main menu is closed
+    if (!this.menuOpen) {
+      this.courseOpen = false;
+    }
   }
 
-  logout() {
-    this.authService.logout();
+  toggleCourse(event: Event) {
+    event.preventDefault(); // Prevents the link from navigating
+    this.courseOpen = !this.courseOpen;
   }
 }

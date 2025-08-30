@@ -1,27 +1,95 @@
-<nav class="header-nav">
-    <div class="header-logo">
-        <i class="fa-solid fa-cubes"></i> VCPK
-    </div>
-    <ng-container *ngIf="isAuthenticate">
-        <ul class="header-menu">
-            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="#" id="courseDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Course
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="courseDropdown">
-                    <li><a class="dropdown-item" routerLink="/course/basic" routerLinkActive="active">Basic Computer</a>
-                    </li>
-                    <li><a class="dropdown-item" routerLink="/course/dtp" routerLinkActive="active">DTP</a></li>
-                    <li><a class="dropdown-item" routerLink="/course/tally" routerLinkActive="active">Tally</a></li>
-                    <li><a class="dropdown-item" routerLink="/course/programming"
-                            routerLinkActive="active">Programming</a>
-                    </li>
-                </ul>
+<nav class="navbar navbar-expand-lg header-nav shadow-sm">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand header-logo text-white">
+      <i class="fa-solid fa-cubes"></i>
+      VCPK
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler text-white"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/home"
+            routerLinkActive="active"
+            aria-current="page"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active"
+            >About</a
+          >
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Course
+          </a>
+          <ul class="dropdown-menu shadow-lg rounded-3">
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/course/basic"
+                routerLinkActive="active"
+                >Basic Computer</a
+              >
             </li>
-            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-            <!-- <li><a routerLink="/login" (click)="logout()" routerLinkActive="active">Logout</a></li> -->
-        </ul>
-    </ng-container>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/course/dtp"
+                routerLinkActive="active"
+                >DTP</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/course/tally"
+                routerLinkActive="active"
+                >Tally</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/course/programming"
+                routerLinkActive="active"
+                >Programming</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
