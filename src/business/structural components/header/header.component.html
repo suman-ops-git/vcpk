@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg header-nav shadow-sm">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand header-logo text-white">
-      <i class="fa-solid fa-cubes"></i>
-      VCPK
-    </a>
-
-    <!-- Mobile Toggle -->
+    <div class="navbar-brand header-logo d-flex align-items-center">
+      <img src="assets/logo/jnnyc-logo.jpeg" alt="VCPK Logo" class="logo-img">
+      <span class="logo-text">স্বামী বিবেকানন্দ কম্পিউটার প্রশিক্ষণ কেন্দ্র</span>
+    </div>
     <button
       class="navbar-toggler text-white"
       type="button"
@@ -41,7 +39,6 @@
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -49,33 +46,33 @@
             Course
           </a>
           <ul class="dropdown-menu shadow-lg rounded-3">
-            <li>
+            <li class="nav-item">
               <a
-                class="dropdown-item"
+                class="nav-link"
                 routerLink="/course/basic"
                 routerLinkActive="active"
                 >Basic Computer</a
               >
             </li>
-            <li>
+            <li class="nav-item">
               <a
-                class="dropdown-item"
+                class="nav-link"
                 routerLink="/course/dtp"
                 routerLinkActive="active"
                 >DTP</a
               >
             </li>
-            <li>
+            <li class="nav-item">
               <a
-                class="dropdown-item"
+                class="nav-link"
                 routerLink="/course/tally"
                 routerLinkActive="active"
                 >Tally</a
               >
             </li>
-            <li>
+            <li class="nav-item">
               <a
-                class="dropdown-item"
+                class="nav-link"
                 routerLink="/course/programming"
                 routerLinkActive="active"
                 >Programming</a

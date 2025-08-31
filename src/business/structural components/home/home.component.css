@@ -1,4 +1,4 @@
-/* .carousel {
+.carousel {
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(31,38,135,0.15);
@@ -110,7 +110,7 @@
     opacity: 1;
     transform: none;
   }
-} */
+}
 
 
 .key-points {

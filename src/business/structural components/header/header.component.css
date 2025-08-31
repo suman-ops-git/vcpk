@@ -1,32 +1,48 @@
 /* Navbar container */
 .header-nav {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  padding: 0.8rem 2rem;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease-in-out;
+  background: linear-gradient(135deg, #0d1a49, #0d326a);
+  padding: 1rem 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+  /* backdrop-filter: blur(8px);
+  transition: all 0.3s ease-in-out; */
 }
 
 /* Logo */
 .header-logo {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   color: #fff !important;
+}
+
+.logo-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 /* Nav Links */
 .navbar-nav .nav-link {
-  color: #fff !important;
-  font-weight: 500;
+  color: #e0eaff !important;
+  font-weight: bold;
   margin-left: 1rem;
   position: relative;
   transition: color 0.3s ease-in-out;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffda79 !important;
+  color: #ffcc5c !important;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffcc5c !important; 
 }
 
 /* Active link underline animation */
@@ -42,10 +58,12 @@
   animation: underline 0.3s ease-in-out;
 }
 
+
 @keyframes underline {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -53,13 +71,13 @@
 
 /* Dropdown menu */
 .dropdown-menu {
-  background: #fff;
+  background: #133175;
   border: none;
   padding: 0.5rem 0;
   animation: fadeIn 0.3s ease-in-out;
 }
 
-.dropdown-menu .dropdown-item {
+/* .dropdown-menu .dropdown-item {
   padding: 0.6rem 1rem;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
@@ -69,7 +87,7 @@
   background: #2575fc;
   color: #fff;
   border-radius: 6px;
-}
+} */
 
 /* Dropdown animation */
 @keyframes fadeIn {
@@ -77,8 +95,43 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    /* Set display to flex to align items horizontally */
+    display: flex;
+    /* Vertically center the logo and text */
+    align-items: center;
+    /* Prevent the text from wrapping to a new line */
+    white-space: nowrap;
+    /* Limit the container width to prevent it from pushing the toggle button off-screen */
+    max-width: calc(100% - 60px); 
+    overflow: hidden; /* Hide any overflow if the text is too long */
+    text-overflow: ellipsis; /* Add an ellipsis to long text */
+  }
+
+  /* Adjust the size of the logo and the font of the text for mobile */
+  .logo-img {
+    height: 35px;
+    width: 35px;
+  }
+
+  .logo-text {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+    margin-left: 0.5rem; /* Space between the logo and the text */
+  }
+}
+
+.navbar-toggler-icon {
+  /* This line is often necessary to override default color and bring the icon back to a light color */
+  filter: brightness(0) invert(1);
+  /* Add a subtle glow/shadow to make the icon clearer */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
 }
