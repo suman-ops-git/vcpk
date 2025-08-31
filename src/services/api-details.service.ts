@@ -35,9 +35,9 @@ export class ApiDetailsService {
       new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)
-      .setUrl('json/productDetails.json')
+      .setUrl('dataset/online-class-database.xlsx')
       .setMethod('get')
-      .setHeader(this.getHeaders()),
+      .setHeader({...this.getHeaders(),...{'responseType': 'arraybuffer'}}),
        new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)

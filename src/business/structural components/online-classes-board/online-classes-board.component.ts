@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ClassNotice } from 'src/business/model/class-notice';
+import { ClassNotice } from '../../model/class-notice';
+import { ExcelService } from '../../../services/excel.service';
+import { GetApiDataService } from '../../../services/get-api-data.service';
 
 @Component({
   selector: 'app-online-classes-board',
@@ -8,17 +10,17 @@ import { ClassNotice } from 'src/business/model/class-notice';
   standalone: false
 })
 export class OnlineClassesBoardComponent implements OnInit {
-public notices: ClassNotice[] = [];
-  constructor() { }
+  public notices: Array<ClassNotice> = new Array<ClassNotice>();
+
+  constructor(private apiService: GetApiDataService, private excelService: ExcelService) { }
 
   ngOnInit(): void {
-    this.notices.push({"id":1,"subject":"Biswa Bangla", "teacher":"T Sen", "meetingLink":"","date": new Date()})
-    this.notices.push({"id":1,"subject":"Biswa Bangla", "teacher":"T Sen", "meetingLink":"","date": new Date()})
-    this.notices.push({"id":1,"subject":"Biswa Bangla", "teacher":"T Sen", "meetingLink":"","date": new Date()})
-    this.notices.push({"id":1,"subject":"Biswa Bangla", "teacher":"T Sen", "meetingLink":"","date": new Date()})
+    this.apiService.getApiData("dataset/online-class-database.xlsx").subscribe(response => {
+      this.notices = this.excelService.convertExcelToJson(response.data) as ClassNotice[];
+    })
 
   }
 
-  removeClass(id:any) {}
+  removeClass(id: any) { }
 
 }

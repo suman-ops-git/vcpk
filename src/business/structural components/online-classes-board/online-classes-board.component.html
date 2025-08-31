@@ -6,10 +6,17 @@
     </h2>
 
     <div class="notice-list">
-      <div class="notice" *ngFor="let class of notices">
-        <h3>{{ class.subject }}</h3>
-        <p>👨‍🏫 {{ class.teacher }}</p>
-        <small><i class="far fa-calendar-alt"></i> {{ class.date | date:'medium' }}</small>
+      <div class="notice" *ngFor="let class of notices" >
+        <h3>{{ class.title }}</h3>
+        <p>👨‍🏫 {{ class.speaker }}</p>
+        <small class="date-row">
+          <span>
+            <i class="far fa-calendar-alt"></i> {{ class.date | date:'medium' }}
+          </span>
+          <a class="external-link" [href]="class.videoUrl" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a> 
+        </small>
       </div>
     </div>
   </div>

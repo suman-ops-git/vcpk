@@ -1,7 +1,9 @@
 export interface ClassNotice {
   id: number;
-  subject: string;
-  teacher: string;
-  meetingLink: string;
+  title: string;
+  topic:string;
+  speaker: string;
+  videoUrl: string;
   date: Date;
+  type:string;
 }

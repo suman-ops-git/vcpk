@@ -108,3 +108,22 @@
 .delete-btn:hover {
   color: #c9302c;
 } */
+.date-row {
+  display: flex;
+  justify-content: space-between; /* pushes date left, icon right */
+  align-items: center;
+  width: 100%;
+}
+
+.date-row .external-link i {
+  color: #444;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-row .external-link i:hover {
+  color: #007bff;               /* turns blue */
+  transform: translateY(-2px);  /* small lift effect */
+}
+

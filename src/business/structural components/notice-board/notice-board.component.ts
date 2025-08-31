@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Notice } from 'src/business/model/notice';
-import { ExcelService } from 'src/services/excel.service';
-import { GetApiDataService } from 'src/services/get-api-data.service';
+import { Notice } from '../../model/notice';
+import { ExcelService } from '../../../services/excel.service';
+import { GetApiDataService } from '../../../services/get-api-data.service';
 
 @Component({
   selector: 'app-notice-board',
