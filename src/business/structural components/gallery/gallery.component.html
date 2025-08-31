@@ -16,7 +16,7 @@
 <!-- Popup Modal -->
 <div class="popup" *ngIf="popupVisible">
   <span class="close-btn" (click)="closePopup()">&times;</span>
-  <img [src]="galleryImages[currentIndex]" class="popup-img" />
+  <img [src]="BASE_URL+galleryImages[currentIndex]" class="popup-img" />
   <div class="popup-controls">
     <button (click)="prevImage()">&#10094;</button>
     <button (click)="nextImage()">&#10095;</button>

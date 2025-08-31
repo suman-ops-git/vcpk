@@ -9,6 +9,7 @@ import { DtpComponent } from './structural components/course/dtp/dtp.component';
 import { TallyComponent } from './structural components/course/tally/tally.component';
 import { ProgramingComponent } from './structural components/course/programing/programing.component';
 import { ContactComponent } from './structural components/contact/contact.component';
+import { GalleryComponent } from './structural components/gallery/gallery.component';
 
 const routes: Routes = [
   // {
@@ -58,6 +59,11 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'gallery',
+    component: GalleryComponent,
     canActivate: [AuthGuard]
   },
 ];

@@ -137,12 +137,13 @@
 .popup-controls button {
   background: rgba(255,255,255,0.2);
   border: none;
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #fff;
-  padding: 10px 18px;
-  border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 .popup-controls button:hover {
   background: rgba(255,255,255,0.5);

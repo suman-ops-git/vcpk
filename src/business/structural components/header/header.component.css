@@ -1,7 +1,7 @@
 /* Navbar container */
 .header-nav {
   background: linear-gradient(135deg, #0d1a49, #0d326a);
-  padding: 1rem 3rem;
+  padding: .5rem .5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
   /* backdrop-filter: blur(8px);
   transition: all 0.3s ease-in-out; */
@@ -9,7 +9,7 @@
 
 /* Logo */
 .header-logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@
   margin-left: 1rem;
   position: relative;
   transition: color 0.3s ease-in-out;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 0.5px;
 }
 

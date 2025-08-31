@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { GetApiDataService } from 'src/services/get-api-data.service';
+import { GetApiDataService } from '../../../services/get-api-data.service';
 
 @Component({
   selector: 'app-gallery',
@@ -11,7 +10,7 @@ import { GetApiDataService } from 'src/services/get-api-data.service';
 export class GalleryComponent implements OnInit {
 
   public readonly BASE_URL: string = "https://suman-ops-git.github.io/vcpk-database/assets/gallery/";
-  public galleryImages: Array<string> = new Array();
+  public galleryImages: Array<string> = new Array<string>();
 
   constructor(private apiService: GetApiDataService) {
 
