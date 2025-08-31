@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { provideHttpClient } from '@angular/common/http';
 
 import { BusinessModule } from '../business/business.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Required for animations
@@ -17,10 +18,12 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     BusinessModule,
     BrowserAnimationsModule, // Add this for ngx-bootstrap animations
-    ModalModule.forRoot() // Add ModalModule here
+    ModalModule.forRoot(), // Add ModalModule here
 
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

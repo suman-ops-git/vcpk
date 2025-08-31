@@ -1,0 +1,18 @@
+<div class="dashboard">
+  <div class="card">
+    <h2 class="card-title">
+      <i class="fas fa-bullhorn"></i> Notice Board
+    </h2>
+
+    <!-- Scrollable wrapper -->
+    <div class="notice-list">
+      <div class="notice" *ngFor="let notice of notices">
+        <h3>{{ notice.title }}</h3>
+        <p>{{ notice.message }}</p>
+        <small>
+          <i class="far fa-clock"></i> {{ notice.date | date:'medium' }}
+        </small>
+      </div>
+    </div>
+  </div>
+</div>

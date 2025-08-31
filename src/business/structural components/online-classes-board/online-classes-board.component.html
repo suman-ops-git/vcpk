@@ -1,0 +1,16 @@
+
+<div class="dashboard">
+  <div class="card">
+    <h2 class="card-title">
+      <i class="fas fa-video"></i> Online Classes
+    </h2>
+
+    <div class="notice-list">
+      <div class="notice" *ngFor="let class of notices">
+        <h3>{{ class.subject }}</h3>
+        <p>👨‍🏫 {{ class.teacher }}</p>
+        <small><i class="far fa-calendar-alt"></i> {{ class.date | date:'medium' }}</small>
+      </div>
+    </div>
+  </div>
+</div>

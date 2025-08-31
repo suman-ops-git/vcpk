@@ -16,8 +16,10 @@ import { ContactComponent } from './structural components/contact/contact.compon
 import { HomeBannerComponent } from "./structural components/home-banner/home-banner.component";
 import { GalleryComponent } from './structural components/gallery/gallery.component';
 import { StudentTestimonialsComponent } from './structural components/student-testimonials/student-testimonials.component';
-
-
+import { CreosoulComponent } from './structural components/creosoul/creosoul.component';
+import { NoticeBoardComponent } from './structural components/notice-board/notice-board.component';
+import { OnlineClassesBoardComponent } from './structural components/online-classes-board/online-classes-board.component';
+import { KeyAboutComponent } from "./structural components/key-about/key-about.component";
 
 @NgModule({
   declarations: [
@@ -34,12 +36,16 @@ import { StudentTestimonialsComponent } from './structural components/student-te
     ContactComponent,
     HomeBannerComponent,
     GalleryComponent,
-    StudentTestimonialsComponent
+    StudentTestimonialsComponent,
+    CreosoulComponent,
+    NoticeBoardComponent,
+    OnlineClassesBoardComponent
   ],
   imports: [
     CommonModule,
     BusinessRoutingModule,
     ReactiveFormsModule,
+    KeyAboutComponent
 ],
   exports: [
     TemplateComponent

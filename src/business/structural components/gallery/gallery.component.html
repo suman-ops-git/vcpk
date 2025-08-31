@@ -5,7 +5,7 @@
       class="gallery-item" 
       *ngFor="let image of galleryImages; let i = index" 
       (click)="openPopup(i)">
-      <img [src]="image" alt="gallery" />
+      <img [src]="BASE_URL+image" alt="gallery" />
       <div class="overlay">
         <span class="view-text">View 📸</span>
       </div>

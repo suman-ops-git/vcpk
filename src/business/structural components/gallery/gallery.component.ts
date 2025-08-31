@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { GetApiDataService } from 'src/services/get-api-data.service';
 
 @Component({
   selector: 'app-gallery',
@@ -7,17 +8,20 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './gallery.component.css',
   standalone: false
 })
-export class GalleryComponent {
- galleryImages: string[] = [
-    'assets/gallery/img1.jpeg',
-    'assets/gallery/img2.jpeg',
-    'assets/gallery/img3.jpeg',
-    'assets/gallery/img4.jpeg',
-    'assets/gallery/img5.jpeg',
-    'assets/gallery/img6.jpeg',
-    'assets/gallery/img7.jpeg',
-    'assets/gallery/img8.jpeg'
-  ];
+export class GalleryComponent implements OnInit {
+
+  public readonly BASE_URL: string = "https://suman-ops-git.github.io/vcpk-database/assets/gallery/";
+  public galleryImages: Array<string> = new Array();
+
+  constructor(private apiService: GetApiDataService) {
+
+  }
+
+  ngOnInit(): void {
+    this.apiService.getApiData("dataset/gallery.json").subscribe(response => {
+      this.galleryImages = response.data;
+    })
+  }
 
   popupVisible = false;
   currentIndex = 0;
