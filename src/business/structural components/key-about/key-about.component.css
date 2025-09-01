@@ -1,36 +1,41 @@
 .key-points {
-  padding: 20px 20px;
-  background: linear-gradient(to right, #f8fbff, #eef5ff);
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  max-height: 582px;
   text-align: center;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
   color: #1e3a8a;
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .points-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
   gap: 25px;
   max-width: 1000px;
   margin: auto;
 }
 
 .point-card {
-  background: #fff;
+  background: #f9f9f9;
   border-radius: 15px;
   padding: 25px 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .point-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .point-card i {
@@ -40,12 +45,36 @@
 }
 
 /* 🎨 Colorful icons */
-.point-card:nth-child(1) i { color: #e63946; } /* Red */
-.point-card:nth-child(2) i { color: #1d4ed8; } /* Blue */
-.point-card:nth-child(3) i { color: #f59e0b; } /* Amber */
-.point-card:nth-child(4) i { color: #10b981; } /* Green */
-.point-card:nth-child(5) i { color: #8b5cf6; } /* Purple */
-.point-card:nth-child(6) i { color: #ec4899; } /* Pink */
+.point-card:nth-child(1) i {
+  color: #e63946;
+}
+
+/* Red */
+.point-card:nth-child(2) i {
+  color: #1d4ed8;
+}
+
+/* Blue */
+.point-card:nth-child(3) i {
+  color: #f59e0b;
+}
+
+/* Amber */
+.point-card:nth-child(4) i {
+  color: #10b981;
+}
+
+/* Green */
+.point-card:nth-child(5) i {
+  color: #8b5cf6;
+}
+
+/* Purple */
+.point-card:nth-child(6) i {
+  color: #ec4899;
+}
+
+/* Pink */
 
 .point-card h4 {
   font-size: 1.2rem;
@@ -64,9 +93,9 @@
     opacity: 0;
     transform: translateY(-40px);
   }
+
   100% {
     opacity: 1;
     transform: none;
   }
 }
-

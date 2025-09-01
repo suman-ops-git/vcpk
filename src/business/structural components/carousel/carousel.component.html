@@ -1,0 +1,30 @@
+<div id="carouselExampleIndicators" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="3000">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button *ngFor="let slide of carouselList; let i = index"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0">
+    </button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div *ngFor="let slide of carouselList; let i = index" class="carousel-item" [class.active]="i === 0">
+      <img [src]="BASE_URL+slide.image_name" class="d-block w-100" [alt]="slide.short_desc">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ slide.short_desc }}</h5>
+        <p>{{ slide.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>

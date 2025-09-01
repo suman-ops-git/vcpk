@@ -19,37 +19,50 @@ export class ApiDetailsService {
     };
   }
 
+  private getHeaderForExcel() {
+    return {
+      ...this.getHeaders(),
+      ...{'responseType': 'arraybuffer'}
+    }
+  }
+
   private apiList: Array<ApiDetails> = [
     new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)
-      .setUrl('dataset/gallery.json')
+      .setUrl('dataset/gallery-data.xlsx')
       .setMethod('get')
-      .setHeader(this.getHeaders()),
+      .setHeader(this.getHeaderForExcel()),
     new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)
-      .setUrl('dataset/notice-database.xlsx')
+      .setUrl('dataset/notice-data.xlsx')
       .setMethod('get')
-      .setHeader({...this.getHeaders(),...{'responseType': 'arraybuffer'}}),
+      .setHeader(this.getHeaderForExcel()),
       new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)
-      .setUrl('dataset/online-class-database.xlsx')
+      .setUrl('dataset/online-class-data.xlsx')
       .setMethod('get')
-      .setHeader({...this.getHeaders(),...{'responseType': 'arraybuffer'}}),
+      .setHeader(this.getHeaderForExcel()),
        new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)
-      .setUrl('json/newspaper.json')
+      .setUrl('dataset/carousel-data.xlsx')
       .setMethod('get')
-      .setHeader(this.getHeaders()),
+      .setHeader(this.getHeaderForExcel()),
       new ApiDetails()
       .setBaseUrl(this.BASE_URL)
       .setVersion(this.version)
-      .setUrl('json/language_data.json')
+      .setUrl('dataset/featured-section-data.xlsx')
       .setMethod('get')
-      .setHeader(this.getHeaders()),
+      .setHeader(this.getHeaderForExcel()),
+      new ApiDetails()
+      .setBaseUrl(this.BASE_URL)
+      .setVersion(this.version)
+      .setUrl('dataset/student-testimonial-data.xlsx')
+      .setMethod('get')
+      .setHeader(this.getHeaderForExcel()),
       
   ];
 

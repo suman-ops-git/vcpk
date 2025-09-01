@@ -1,0 +1,50 @@
+<section class="bg-light">
+  <div class="container my-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 featured-photo">
+          <img [src]="BASE_URL+featuredList[0]?.imgName"
+              class="img-fluid rounded shadow"
+              alt="Training">
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <h2 class="fw-bold">{{featuredList[0]?.title}}</h2>
+          <p>{{featuredList[0]?.description}}</p>
+          <a routerLink="/success-stories" class="btn btn-primary">Read More</a>
+        </div>
+        
+      </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h2 class="fw-bold">{{featuredList[1]?.title}}</h2>
+        <p>{{featuredList[1]?.description}}</p>
+        <a routerLink="/about" class="btn btn-primary">Know More</a>
+      </div>
+      <div class="col-md-6 featured-photo">
+        <img [src]="BASE_URL+featuredList[1]?.imgName"
+            class="img-fluid rounded shadow"
+            alt="Training">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container my-5 text-center">
+    <h2 class="fw-bold mb-4">Featured Moments</h2>
+    <div class="d-flex justify-content-center flex-wrap gap-4">
+      <ng-container *ngFor="let item of featuredList; let i = index">
+        <ng-container  *ngIf="i > 1">
+          <div  class="polaroid col-md-3">
+            <img [src]="BASE_URL+item?.imgName" alt="Classroom" class="img-fluid">
+            <p>{{item?.title}}</p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</section>

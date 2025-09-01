@@ -1,0 +1,40 @@
+.carousel {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(31,38,135,0.15);
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.carousel-item img {
+  width: 100%;
+  object-fit: cover;  /* ensures image fills without distortion */
+}
+
+/* Small screens (mobile) */
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 200px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 993px) {
+  .carousel-item img {
+    height: 500px;
+  }
+}

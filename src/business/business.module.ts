@@ -16,10 +16,11 @@ import { ContactComponent } from './structural components/contact/contact.compon
 import { HomeBannerComponent } from "./structural components/home-banner/home-banner.component";
 import { GalleryComponent } from './structural components/gallery/gallery.component';
 import { StudentTestimonialsComponent } from './structural components/student-testimonials/student-testimonials.component';
-import { CreosoulComponent } from './structural components/creosoul/creosoul.component';
 import { NoticeBoardComponent } from './structural components/notice-board/notice-board.component';
 import { OnlineClassesBoardComponent } from './structural components/online-classes-board/online-classes-board.component';
 import { KeyAboutComponent } from "./structural components/key-about/key-about.component";
+import { CarouselComponent } from './structural components/carousel/carousel.component';
+import { FeaturedSectionComponent } from './structural components/featured-section/featured-section.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,10 @@ import { KeyAboutComponent } from "./structural components/key-about/key-about.c
     HomeBannerComponent,
     GalleryComponent,
     StudentTestimonialsComponent,
-    CreosoulComponent,
     NoticeBoardComponent,
-    OnlineClassesBoardComponent
+    OnlineClassesBoardComponent,
+    CarouselComponent,
+    FeaturedSectionComponent
   ],
   imports: [
     CommonModule,

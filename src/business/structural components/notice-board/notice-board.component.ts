@@ -17,7 +17,7 @@ export class NoticeBoardComponent implements OnInit {
   constructor(private apiService:GetApiDataService, private excelService: ExcelService) { }
 
   ngOnInit(): void {
-    this.apiService.getApiData("dataset/notice-database.xlsx").subscribe(response => {
+    this.apiService.getApiData("dataset/notice-data.xlsx").subscribe(response => {
       this.notices = this.excelService.convertExcelToJson(response.data) as Notice[];
     })
 

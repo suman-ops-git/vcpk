@@ -15,12 +15,10 @@ export class OnlineClassesBoardComponent implements OnInit {
   constructor(private apiService: GetApiDataService, private excelService: ExcelService) { }
 
   ngOnInit(): void {
-    this.apiService.getApiData("dataset/online-class-database.xlsx").subscribe(response => {
+    this.apiService.getApiData("dataset/online-class-data.xlsx").subscribe(response => {
       this.notices = this.excelService.convertExcelToJson(response.data) as ClassNotice[];
     })
 
   }
-
-  removeClass(id: any) { }
 
 }

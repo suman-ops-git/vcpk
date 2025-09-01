@@ -1,28 +1,36 @@
 <section class="testimonials">
   <h2 class="section-title">🌟 What Our Students Say</h2>
 
-  <div class="testimonial-carousel">
-    <div 
-      class="testimonial-card" 
-      *ngFor="let t of testimonials; let i = index"
-      [style.transform]="'translateX(-' + (currentIndex * (100 / visibleCards)) + '%)'"
-    >
-      <div class="student-img">
-        <img [src]="t.image" alt="Student photo">
+  <div class="carousel-viewport" [style.--vis]="visibleCards">
+    <!-- Move transform to the TRACK -->
+    <div class="carousel-track"
+         [style.transform]="'translateX(-' + (currentIndex * (100 / visibleCards)) + '%)'">
+      <div class="testimonial-card" *ngFor="let t of testimonials">
+        <div class="student-img">
+          <ng-container *ngIf="t.profilePic; else placeholder">
+            <img [src]="BASE_URL + t.profilePic" alt="Student photo" />
+          </ng-container>
+           <!-- Else show placeholder icon -->
+          <ng-template #placeholder>
+            <i class="fa-solid fa-user"></i>
+          </ng-template>
+        </div>
+        <p class="testimonial-text">“{{ t.feedback }}”</p>
+        <h4 class="student-name">{{ t.name }}</h4>
+        <span class="student-course">{{ t.course }}</span>
       </div>
-      <p class="testimonial-text">“{{ t.feedback }}”</p>
-      <h4 class="student-name">{{ t.name }}</h4>
-      <span class="student-course">{{ t.course }}</span>
     </div>
+
+    <!-- optional arrows -->
+    <button class="nav prev" (click)="prev()">&#10094;</button>
+    <button class="nav next" (click)="next()">&#10095;</button>
   </div>
 
-  <!-- Dots indicators -->
+  <!-- Dots -->
   <div class="carousel-dots">
-    <span 
-      class="dot" 
-      *ngFor="let d of getDots(); let i = index" 
-      [class.active]="i === getActiveDotIndex()"
-      (click)="goToSlide(i)">
-    </span>
+    <span class="dot"
+          *ngFor="let _ of getDots(); let i = index"
+          [class.active]="i === getActiveDotIndex()"
+          (click)="goToDot(i)"></span>
   </div>
 </section>

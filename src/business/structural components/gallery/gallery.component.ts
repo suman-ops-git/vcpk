@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { GetApiDataService } from '../../../services/get-api-data.service';
+import { ExcelService } from '../../../services/excel.service';
 
 @Component({
   selector: 'app-gallery',
@@ -10,15 +11,15 @@ import { GetApiDataService } from '../../../services/get-api-data.service';
 export class GalleryComponent implements OnInit {
 
   public readonly BASE_URL: string = "https://suman-ops-git.github.io/vcpk-database/assets/gallery/";
-  public galleryImages: Array<string> = new Array<string>();
+  public galleryImages: Array<any> = new Array<any>();
 
-  constructor(private apiService: GetApiDataService) {
+  constructor(private apiService: GetApiDataService, private excelService: ExcelService) {
 
   }
 
   ngOnInit(): void {
-    this.apiService.getApiData("dataset/gallery.json").subscribe(response => {
-      this.galleryImages = response.data;
+    this.apiService.getApiData("dataset/gallery-data.xlsx").subscribe(response => {
+      this.galleryImages = this.excelService.convertExcelToJson(response.data) as any[];
     })
   }
 

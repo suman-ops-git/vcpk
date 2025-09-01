@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ExcelService } from '../../../services/excel.service';
+import { GetApiDataService } from '../../../services/get-api-data.service';
 
 @Component({
   selector: 'app-student-testimonials',
@@ -6,43 +8,55 @@ import { Component } from '@angular/core';
   styleUrls: ['./student-testimonials.component.css'],
   standalone: false
 })
-export class StudentTestimonialsComponent {
-  testimonials = [
-    { name: 'Rahul Sharma', course: 'Full Stack Development', feedback: 'The training was very practical and industry-oriented. I got my first job within 2 months!', image: 'assets/students/student1.jpg' },
-    { name: 'Priya Singh', course: 'Digital Marketing', feedback: 'Amazing mentors and great hands-on projects. Highly recommended!', image: 'assets/students/student2.jpg' },
-    { name: 'Amit Kumar', course: 'Data Science', feedback: 'Very interactive classes with real-world examples. Helped me switch careers successfully.', image: 'assets/students/student3.jpg' },
-    { name: 'Sneha Verma', course: 'UI/UX Design', feedback: 'Loved the creative environment and hands-on practice. Built a strong portfolio.', image: 'assets/students/student4.jpg' },
-    { name: 'Rohit Mehta', course: 'Cloud Computing', feedback: 'Cloud labs were excellent! Got AWS certification with their guidance.', image: 'assets/students/student5.jpg' }
-  ];
+export class StudentTestimonialsComponent implements OnInit, OnDestroy {
+  public readonly BASE_URL: string = "https://suman-ops-git.github.io/vcpk-database/assets/student-profile-picture/";
+  public testimonials: Array<any> = new Array<any>();
 
-  currentIndex = 0;
-  visibleCards = 3; // ✅ Show 3 cards
-  intervalId: any;
+  public currentIndex = 0;
+  public visibleCards = 3; // ✅ Show 3 cards
+  public intervalId: any;
+
+  constructor(private apiService: GetApiDataService, private excelService: ExcelService) { }
 
   ngOnInit(): void {
-    this.startAutoSlide();
+    this.apiService.getApiData("dataset/student-testimonial-data.xlsx").subscribe(response => {
+      this.testimonials = this.excelService.convertExcelToJson(response.data) as any[];
+      this.setVisibleCards();
+      window.addEventListener('resize', this.setVisibleCards.bind(this));
+    })
   }
 
-  ngOnDestroy(): void {
-    if (this.intervalId) clearInterval(this.intervalId);
+  setVisibleCards() {
+    const w = window.innerWidth;
+    this.visibleCards = w < 576 ? 1 : w < 992 ? 2 : 3;
+    // keep index in bounds after resize
+    this.currentIndex = Math.min(this.currentIndex, this.maxIndex());
   }
 
-  startAutoSlide() {
-    this.intervalId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
-    }, 3000);
+  maxIndex(): number {
+    return Math.max(0, this.testimonials.length - this.visibleCards);
   }
 
-  // ✅ Dots logic
-  getDots() {
-    return Array(Math.ceil(this.testimonials.length / this.visibleCards));
+  next() {
+    this.currentIndex = this.currentIndex >= this.maxIndex() ? 0 : this.currentIndex + 1;
   }
 
-  getActiveDotIndex() {
+  prev() {
+    this.currentIndex = this.currentIndex <= 0 ? this.maxIndex() : this.currentIndex - 1;
+  }
+
+  /* Dots */
+  getDots(): number[] {
+    return Array.from({ length: Math.ceil(this.testimonials.length / this.visibleCards) });
+  }
+  getActiveDotIndex(): number {
     return Math.floor(this.currentIndex / this.visibleCards);
   }
+  goToDot(dotIndex: number) {
+    this.currentIndex = Math.min(dotIndex * this.visibleCards, this.maxIndex());
+  }
 
-  goToSlide(index: number) {
-    this.currentIndex = index * this.visibleCards;
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.setVisibleCards.bind(this));
   }
 }
